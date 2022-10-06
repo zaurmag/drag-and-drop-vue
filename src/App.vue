@@ -84,6 +84,7 @@ import AppSearch from './components/AppSearch.vue'
 import DocsItem from './components/docs/DocsItem.vue'
 import { computed, ref } from 'vue'
 
+// Educations DAD
 const items = ref([
   {
     id: 0,
