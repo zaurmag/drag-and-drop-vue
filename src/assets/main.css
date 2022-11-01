@@ -611,8 +611,10 @@ progress {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     border: 0.0625rem solid #d3d8df;
     border-radius: 50%;
+    transition: transform 0.3s ease;
     width: 1.375rem;
     height: 1.375rem; }
     .docs__item-icon .icon {
@@ -667,7 +669,9 @@ progress {
   .docs__item--cat .docs__items {
     margin-top: 0;
     margin-left: 1rem;
-    display: none; }
+    transition: height 0.3s ease;
+    height: 0;
+    overflow: hidden; }
   .docs__item--cat.is-active .docs__item-icon {
     transform: rotate(-180deg); }
   .docs__item.is-moved {
@@ -689,7 +693,7 @@ progress {
     font-size: 0.8125rem;
     line-height: 1; }
   .is-active .docs__items {
-    display: block; }
+    height: 100%; }
 
 .indicator {
   border-radius: 50%;
