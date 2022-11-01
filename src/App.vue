@@ -4,6 +4,7 @@
     <app-search />
 
     <div class="docs">
+      <!-- Categories -->
       <div class="docs__cats">
         <docs-item
             v-for="item in data.cats"
@@ -11,7 +12,15 @@
             :doc-item="item"
         />
       </div>
-      <div class="docs__items"></div>
+
+      <!-- Items -->
+      <div class="docs__items">
+        <docs-item
+            v-for="item in data.items"
+            :key="item.id"
+            :doc-item="item"
+        />
+      </div>
     </div>
 
     <!-- Educations DAD -->

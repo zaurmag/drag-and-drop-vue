@@ -1,6 +1,10 @@
 <template>
   <div class="docs__item-row">
-    <div class="docs__item-icon" v-if="item.type === 'cat'">
+    <div
+        class="docs__item-icon"
+        v-if="item.type === 'cat'"
+        @click="$emit('click')"
+    >
       <svg class="icon icon-i_chevron-down">
         <use xlink:href="@/assets/images/sprite.svg#i_chevron-down"></use>
       </svg>
@@ -16,6 +20,7 @@
       />
     </div>
 
+    <div class="docs__item-req" v-if="item.required">Обязательный</div>
     <div class="docs__item-txt">{{ item.text }}</div>
 
     <div class="docs__item-buttons">
@@ -29,7 +34,8 @@
 <script setup>
 import AppIndicator from './ui/AppIndicator.vue'
 import AppButton from './ui/AppButton.vue'
-import { defineProps } from 'vue'
+
+defineEmits(['click'])
 
 defineProps({
   item: {
