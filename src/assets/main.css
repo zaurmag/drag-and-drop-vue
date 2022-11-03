@@ -659,14 +659,14 @@ progress {
       cursor: move !important; }
       .docs__item-btn--mv .icon {
         font-size: 1rem; }
-  .docs__item--cat .docs__item-row {
+  .docs__item--cat > .docs__item-row {
     cursor: pointer;
     padding: 0.8125rem 1rem; }
-  .docs__item--cat .docs__item-tlt {
+  .docs__item--cat > .docs__item-tlt {
     font-weight: 500;
     font-size: 0.9375rem;
     line-height: 1.08; }
-  .docs__item--cat .docs__items {
+  .docs__item--cat > .docs__items {
     margin-top: 0;
     margin-left: 1rem;
     transition: height 0.3s ease;

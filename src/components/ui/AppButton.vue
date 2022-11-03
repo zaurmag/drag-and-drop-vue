@@ -13,7 +13,8 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
+defineEmits(['click'])
+
 defineProps({
   classList: {
     type: String,
@@ -24,6 +25,4 @@ defineProps({
     required: false
   }
 })
-
-defineEmits(['click'])
 </script>
