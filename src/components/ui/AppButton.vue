@@ -4,15 +4,14 @@
       type="button"
       @click="$emit('click')"
   >
-    <svg v-if="icon" :class='`icon icon-${icon}`'>
-      <use :xlink:href="`src/assets/images/sprite.svg#${icon}`"></use>
-    </svg>
+    <svg-icon :name="icon" />
 
     <slot />
   </button>
 </template>
 
 <script setup>
+import SvgIcon from './SvgIcon.vue'
 defineEmits(['click'])
 
 defineProps({

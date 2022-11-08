@@ -3,14 +3,12 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-
 defineProps({
   colorTheme: {
     type: String,
     required: true,
     validator(value) {
-      return ['cyan', 'yellow', 'orange', 'blue', 'gray'].includes(value)
+      return ['cyan', 'yellow', 'orange', 'blue', 'gray', 'red'].includes(value)
     }
   }
 })

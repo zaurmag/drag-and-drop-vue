@@ -3,11 +3,8 @@
     <div
         class="docs__item-icon"
         v-if="item.type === 'cat'"
-        @click="$emit('click')"
     >
-      <svg class="icon icon-i_chevron-down">
-        <use xlink:href="@/assets/images/sprite.svg#i_chevron-down"></use>
-      </svg>
+      <svg-icon name="i_chevron-down" />
     </div>
 
     <div class="docs__item-tlt">{{ item.title }}</div>
@@ -26,7 +23,13 @@
     <div class="docs__item-buttons">
       <app-button icon="i_pen" class-list="docs__item-btn--ed" />
       <app-button icon="i_trash" class-list="docs__item-btn--del" />
-      <app-button icon="i_move" class-list="docs__item-btn--mv" />
+      <app-button
+          icon="i_move"
+          class-list="docs__item-btn--mv"
+          @mousedown="$emit('mousedown')"
+          @mouseup="$emit('mouseup')"
+          @mousemove="$emit('mousemove')"
+      />
     </div>
   </div>
 </template>
@@ -34,8 +37,9 @@
 <script setup>
 import AppIndicator from './ui/AppIndicator.vue'
 import AppButton from './ui/AppButton.vue'
+import SvgIcon from './ui/SvgIcon.vue'
 
-defineEmits(['click'])
+defineEmits(['click', 'mousedown', 'mouseup', 'mousemove'])
 
 defineProps({
   item: {
@@ -44,7 +48,3 @@ defineProps({
   }
 })
 </script>
-
-<style scoped>
-
-</style>
