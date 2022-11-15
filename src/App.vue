@@ -5,14 +5,7 @@
 
     <div class="docs">
       <!-- Categories -->
-      <div
-          class="docs__cats"
-      >
-      <!--
-        @drop="onDrop($event)"
-        @dragover.prevent
-        @dragenter.prevent
-       -->
+      <div class="docs__cats">
         <cat-item
             v-for="item in cats"
             :key="item.id"
@@ -22,14 +15,14 @@
             :dropdown="dropdown"
         />
       </div>
-      <!--
-        @dragstart="startDrag($event, item)"
-        @dragenter.prevent="onEnter($event, item.order)"
-        @dragend="dragend"
-       -->
 
       <!-- Items -->
-      <div class="docs__items">
+      <div
+          class="docs__items"
+          @drop="onDrop($event, 'items')"
+          @dragover.prevent
+          @dragenter.prevent
+      >
         <div
             draggable="true"
             class="docs__item"
@@ -39,11 +32,6 @@
         >
           <app-item :item="item" />
         </div>
-        <!--
-         @dragstart="startDrag($event, item)"
-          @dragenter.prevent="onEnter($event, item.order)"
-          @dragend="dragend"
-         -->
       </div>
     </div>
   </app-page>
